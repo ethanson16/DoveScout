@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Dove Hunting Texas</Title>
+        <link rel="stylesheet" href="sytles/header.css">
+        <link rel="stylesheet" href="sytles/main.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&family=Radley:ital@0;1&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="left-header">
+                <div class="logo">DoveScout.com</div>
+            </div>
+            <div class="middle-header">
+                <input class="search-bar" type="text" placeholder ="Zip Code">
+                <button class="search-button">GO</button>
+            </div>
+            <div class="right-header">
+                <button class="sponsors-button">Sponsors</button>
+                <button class="account-button" >Account</button>
+                
+            </div>
+
+
+        </div>
+        <div class="library">Library
+
+        </div>
+        <div class="main">
+            <div id="map">
+
+            </div>
+
+        </div>
+
+
+        <script> //Map API linking
+
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+              key: "AIzaSyBUIsWNtCyedOYKQKXiDtBp23YVGJFzOKA",
+              v: "weekly",
+              // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+              // Add other bootstrap parameters as needed, using camel case.
+            });
+
+          </script>
+
+
+        <script> // Map creation
+
+            // Initialize and add the map
+            let map;
+
+            async function initMap() {
+            // The location of DFW
+            const dfw = {lat: 32.901253, lng: -97.036985};
+            // Request needed libraries.
+            //@ts-ignore
+            const { Map } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+            // The map, centered at DFW
+            map = new Map(document.getElementById("map"), {
+                zoom: 8,
+                center: dfw,
+                mapId: "DFW_map",
+            });
+
+            // The marker, positioned at DFW
+            const marker = new AdvancedMarkerElement({
+                map: map,
+                position: dfw,
+                title: "Uluru",
+            });
+            }
+
+            initMap();
+        </script>
+
+
+
+
+    </body>
+</html>
