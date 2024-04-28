@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding-left: 300px;
+    padding-top: 100px;
+    height: 2000px;
+}
+
+p{
+    font-family: "Big Shoulders Text", sans-serif;
+    font-weight: 700;
+}
+
+.library{
+    position: fixed;
+    left: 0;
+    top: 102px;
+    bottom: 0;
+    width: 300px;
+    background-color: rgb(153, 153, 153);
+}
+
+.lease-tn{
+    height: 60px;
+    border-bottom-width: 2px;
+    border-color: black;
+    border-bottom-style: solid;
+    display: flex;
+    justify-content: space-between;
+}
+.lease-tn-info{
+    width: 130px;
+}
+
+.lease-tn-name{
+    margin: 0;
+    margin-top: 5px;
+    margin-left: 8px;
+    font-size: 25px;
+}
+
+.lease-tn-location{
+    margin: 0;
+    margin-top: 3px;
+    margin-left: 8px;
+}
+
+
+.lease-tn-spots{
+    margin-right: 25px;
+    margin-top: 4px;
+    width: 100px;
+}
+
+.instructions{
+    margin-left: 20px;
+}
